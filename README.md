@@ -18,7 +18,33 @@ npm install
 
 ### 2. Seed exam scores data
 
-_Make sure MongoDB is running locally (default: mongodb://localhost:27017)._
+_You can choose to use either MongoDB Local or MongoDB Atlas (cloud) to seed exam score data from the CSV file._
+**Using MongoDB local:**
+
+- Change the MONGODB_URL in file _env.config.ts_ to local URL:
+
+```
+MONGODB_URL: "mongodb://127.0.0.1:27017/examdb"
+```
+
+- Make sure MongoDB is running locally (default: mongodb://localhost:27017), run:
+
+```sh
+cd be
+npm run seed
+```
+
+⚡ Note: MongoDB Local is significantly faster than Atlas when reading/writing large CSV files.
+**Using MongoDB Atlas:**
+
+- Change the MONGODB_URL in file _env.config.ts_ to URL Atlas:
+
+```
+  MONGODB_URL:
+    "mongodb+srv://vanlinh042004:rmzl5RaH8WkSah31@cluster0.5cvqe9s.mongodb.net/examdb?retryWrites=true&w=majority&appName=Cluster0",
+```
+
+- Run:
 
 ```sh
 cd be

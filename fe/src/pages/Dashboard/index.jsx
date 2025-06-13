@@ -6,11 +6,19 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getStudentsTop10Service()
-      .then((res) => {
-        setTopStudents(res || []);
-      })
-      .finally(() => setLoading(false));
+    const fetchTopStudents = async () => {
+      try {
+        setLoading(true);
+        const res = await getStudentsTop10Service();
+        console.log("Top students data:", res);
+        setTopStudents(res);
+      } catch (err) {
+        console.error("Error loading top students:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchTopStudents();
   }, []);
 
   return (
