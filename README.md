@@ -21,7 +21,7 @@ npm install
 _You can choose to use either MongoDB Local or MongoDB Atlas (cloud) to seed exam score data from the CSV file._
 **Using MongoDB local:**
 
-- Change the MONGODB_URL in file _env.config.ts_ to local URL:
+- Change the MONGODB*URL in file \_env.config.ts* to local URL:
 
 ```
 MONGODB_URL: "mongodb://127.0.0.1:27017/examdb"
@@ -37,7 +37,7 @@ npm run seed
 ⚡ Note: MongoDB Local is significantly faster than Atlas when reading/writing large CSV files.
 **Using MongoDB Atlas:**
 
-- Change the MONGODB_URL in file _env.config.ts_ to URL Atlas:
+- Change the MONGODB*URL in file \_env.config.ts* to URL Atlas:
 
 ```
   MONGODB_URL:
@@ -60,7 +60,7 @@ cd be
 npm run dev
 ```
 
-_The backend will be available at http://localhost:5000._
+_The back-end will be available at http://localhost:5000._
 **Front-end**
 
 ```sh
@@ -68,4 +68,4 @@ cd fe
 npm start
 ```
 
-_The backend will be available at http://localhost:3000._
+_The front-end will be available at http://localhost:3000._
